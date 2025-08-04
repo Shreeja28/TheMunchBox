@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>The Munch Box</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" th:href="@{/css/Products.css}" />
+</head>
+
+<body>
+<nav th:replace="~{Navigation::navbar()}"></nav>
+
+<div id="main-container">
+    <div id="biryani">
+
+        <!-- Product Card 1 -->
+        <div class="item-card">
+            <div class="card-top">
+                <i class="fa fa-star">4.5</i>
+            </div>
+            <img th:src="@{/Images/biryani/Biryani_of_Hyderabadi.jpg}" alt="Chicken Biryani">
+            <p class="item-name">Chicken Biryani</p>
+            <p class="item-price">Price: Rs 410</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/1}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/paneer/paneer-butter-masala.jpg}" alt="Paneer Butter">
+            <p class="item-name">Paneer Butter</p>
+            <p class="item-price">Rs 290</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/2}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/chicken/Afgani-chicken-curry.jpg}" alt="Afgani Chicken">
+            <p class="item-name">Afgani Chicken</p>
+            <p class="item-price">Rs 410</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/3}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">5.0</i></div>
+            <img th:src="@{/Images/chicken/butter-chicken.jpg}" alt="Butter Chicken">
+            <p class="item-name">Butter Chicken</p>
+            <p class="item-price">Rs 380</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/4}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/north-india-food/Laccha-Paratha.jpg}" alt="Laccha Paratha">
+            <p class="item-name">Laccha Paratha</p>
+            <p class="item-price">Rs 30</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/5}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">5.0</i></div>
+            <img th:src="@{/Images/chicken/Matka-Chicken.jpg}" alt="Matka Chicken">
+            <p class="item-name">Matka Chicken</p>
+            <p class="item-price">Rs 510</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/6}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 7 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.0</i></div>
+            <img th:src="@{/Images/chicken/Tandoori-chicken-tikka.jpg}" alt="Chicken Tikka">
+            <p class="item-name">Chicken Tikka</p>
+            <p class="item-price">Rs 310</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/7}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 8 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/north-india-food/Honey-Chilli-Potato.jpg}" alt="Chilli Potato">
+            <p class="item-name">Chilli Potato</p>
+            <p class="item-price">Rs 150</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/8}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 9 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/north-india-food/chola-bhatura.jpg}" alt="Chola Bhatura">
+            <p class="item-name">Chola Bhatura</p>
+            <p class="item-price">Rs 180</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/9}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 10 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.0</i></div>
+            <img th:src="@{/Images/north-india-food/Gulab Jamun.jpg}" alt="Gulab Jamun">
+            <p class="item-name">Gulab Jamun</p>
+            <p class="item-price">Rs 50</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/10}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 11 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">4.5</i></div>
+            <img th:src="@{/Images/chinese/chowmein.jpg}" alt="Chowmein">
+            <p class="item-name">Chowmein</p>
+            <p class="item-price">Rs 150</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/11}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+        <!-- Product Card 12 -->
+        <div class="item-card">
+            <div class="card-top"><i class="fa fa-star">5.0</i></div>
+            <img th:src="@{/Images/paneer/paneer-do-pyaza.jpg}" alt="Paneer Do Pyaza">
+            <p class="item-name">Paneer Do Pyaza</p>
+            <p class="item-price">Rs 270</p>
+            <a th:if="${session.loggedInUser != null}" th:href="@{/orders/buy/12}" class="buy-button">Buy Now</a>
+            <a th:if="${session.loggedInUser == null}" href="/login" class="buy-button">Buy Now</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>The Munch Box</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Login.css}" />
+</head>
+
+<body>
+
+<nav th:replace="~{Navigation::navbar()}"></nav>
+
+<div class="LoginContainer">
+
+	<!-- Admin Login Section -->
+	<div class="admin">
+		<div class="content">
+			<strong style="font-size: 16px; margin-bottom: 0;">BUSINESS</strong>
+			<h2>For <span style="color:green;">Admins</span></h2>
+
+			<form th:action="@{/adminLogin}" method="post">
+				<b>Email :</b>
+				<input type="email" name="email" placeholder="Enter email..." class="email" required><br />
+
+				<b>Password:</b>
+				<input type="password" name="password" placeholder="Enter password" class="password" required minlength="4" maxlength="12"><br />
+
+				<small style="color: red;" th:text="${error}"></small><br />
+
+				<button type="submit" class="loginButton">Log in</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- User Login Section -->
+	<div class="user">
+		<div class="content">
+			<h2>For <span style="color:green;">Users</span></h2>
+
+			<form th:action="@{/customerLogin}" method="post" class="form">
+
+				<b>Email :</b>
+				<input type="email" name="userEmail" placeholder="Enter email" required><br />
+
+				<b>Password:</b>
+				<input type="password" name="userPassword" placeholder="Enter password" required minlength="4" maxlength="12" class="userPassword"><br />
+
+				<small style="color: red;" th:text="${error2}"></small><br />
+
+				<button type="submit" class="loginButton">Log in</button><br />
+
+				<p>I don't have an account? <a th:href="@{/register}" style="color: green;">Register Here</a></p>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+</body>
+
+</html>
